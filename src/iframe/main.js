@@ -1,7 +1,9 @@
 import Vue from 'vue'
-import App from './App.vue'
+import Inner from './Inner.vue'
 import router from './router'
 import store from './store'
+
+Vue.config.productionTip = false
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -10,13 +12,10 @@ import iframeCommunicate from '@/assets/iframeCommunicate.js'
 Vue.use(ElementUI);
 Vue.use(iframeCommunicate);
 
-Vue.config.productionTip = false
-
 const vm = new Vue({
   router,
   store,
-  render: h => h(App)
-}).$mount('#app')
-let iWin = document.getElementById('inner-iframe').contentWindow;
-console.log('iWin', iWin)
-vm.iframeCommunicate.setContentWindow(iWin);
+  render: h => h(Inner)
+}).$mount('#inner')
+console.log('inner main.js---11111')
+vm.iframeCommunicate.setContentWindow(window.parent);
