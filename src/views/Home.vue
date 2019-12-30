@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <!--内层iframe-->
+    <!--iframe-->
     <iframe-comp :routeName="routeName"></iframe-comp>
   </div>
 </template>

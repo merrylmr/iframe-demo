@@ -5,6 +5,7 @@ import store from './store'
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+// 用于iframe通信
 import iframeCommunicate from '@/assets/iframeCommunicate.js'
 
 Vue.use(ElementUI);

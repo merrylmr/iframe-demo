@@ -1,4 +1,9 @@
-# iframe-demo
+# vue-iframe
+
+## 介绍
+实现外层与iframe的通信;
+与h5建站工具项目结合起来，编写一个简单的demo;
+通过postMessage通信；
 
 ## Project setup
 ```

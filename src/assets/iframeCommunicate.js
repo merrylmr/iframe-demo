@@ -14,7 +14,7 @@ export default {
       const TARGET_ORIGIN = window.location.origin;
 
       // 监听接收信息
-      window.addEventListener('message', function recieveMessage(event) {
+      window.addEventListener('message', function receiveMessage(event) {
         if (event.origin !== TARGET_ORIGIN) {
           return;
         }
@@ -38,7 +38,6 @@ export default {
        * @param window
        */
       function setContentWindow(window) {
-        console.log('setContentWindow', window)
         if (pWindow) return;
         pWindow = window;
       }
@@ -50,6 +49,9 @@ export default {
        * @param msgId: 消息id, 用于一对一回调
        */
       function post(eventName, msg, msgId) {
+        if (!pWindow) {
+          pWindow = window
+        }
         pWindow.postMessage({
           eventName,
           data: msg,

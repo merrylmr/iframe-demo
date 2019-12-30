@@ -1,5 +1,5 @@
 <template>
-  <!--内层iframe-->
+  <!--iframe-->
   <iframe
     :src="`/inner.html/#${routeName}`"
     frameborder="0"
